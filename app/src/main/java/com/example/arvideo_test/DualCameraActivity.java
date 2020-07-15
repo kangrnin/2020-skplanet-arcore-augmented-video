@@ -11,7 +11,6 @@ import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.AugmentedImageDatabase;
 import com.google.ar.core.Config;
 import com.google.ar.core.Frame;
-import com.google.ar.core.Pose;
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;
@@ -28,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collection;
 
-public class MainActivity extends AppCompatActivity {
+public class DualCameraActivity extends AppCompatActivity {
 
     ArFragment arFragment;
     Session session;
@@ -40,14 +39,13 @@ public class MainActivity extends AppCompatActivity {
     AugmentedImage currentTrackingImage;
 
     private ModelRenderable videoRenderable;
-    private float HEIGHT = 0.33f;
 
     private boolean tracking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dualcamera);
 
         texture = new ExternalTexture();
         mediaPlayer = MediaPlayer.create(this, R.raw.vid1);
